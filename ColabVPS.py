@@ -161,7 +161,7 @@ def _setupSSHDImpl(public_key, tunnel, ngrok_token, ngrok_region, mount_gdrive_t
 
   root_password = "69420verycoolpasswordnohackzlmao"
   user_password = "69420verycoolpasswordnohackzlmao"
-  user_name = "yeahboiiiiiii"
+  user_name = "gay"
   msg += "✂️"*24 + "\n"
   msg += f"root password: {root_password}\n"
   msg += f"{user_name} password: {user_password}\n"
@@ -364,7 +364,7 @@ def _setupVNC():
   my_apt.installDebPackage("virtualgl.deb")
   my_apt.installDebPackage("turbovnc.deb")
 
-  my_apt.installPkg("xfce4", "xfce4-terminal", "xfce4-goodies")
+  my_apt.installPkg("xfce4", "xfce4-terminal", "xfce4-goodies", "firefox", "elementary-xfce-icon-theme")
   my_apt.commit()
   my_apt.close()
 
