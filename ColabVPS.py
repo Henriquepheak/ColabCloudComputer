@@ -95,7 +95,7 @@ def _get_gpu_name():
 def _check_gpu_available():
   gpu_name = _get_gpu_name()
   if gpu_name == None:
-    print("Oops, there seems to be no GPU available! You can either change runtime type(stated on the textblock above) or ignore this message and press Y to continune")
+    print("Oops, there seems to be no GPU available! You can either change runtime type (stated on the textblock above) or ignore this message and press Y to continune")
   elif gpu_name == "Tesla K80":
     print("Warning! GPU of your assigned virtual machine is Tesla K80.")
     print("You might get better GPU by reseting the runtime.")
@@ -263,11 +263,7 @@ def _setupSSHDMain(public_key, tunnel, ngrok_region, check_gpu_available, mount_
   ngrok_token = None
 
   if tunnel == "ngrok":
-    print("It seems Google is blocking ngrok.")
-    print("If you got error 'kex_exchange_identification: Connection closed by remote host' when you login to ssh, you need to use Argo Tunnel instead of ngrok.")
-    print("Please read this for more details:")
-    print("https://github.com/demotomohiro/remocolab/blob/master/README.md")
-    print("---")
+    print("yea right use ngrok because argo tunnel is very gay")
     print("Copy&paste your tunnel authtoken from https://dashboard.ngrok.com/auth")
     print("(You need to sign up for ngrok and login,)")
     #Set your ngrok Authtoken.
