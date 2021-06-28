@@ -360,8 +360,7 @@ def _setupVNC():
   my_apt.installDebPackage("virtualgl.deb")
   my_apt.installDebPackage("turbovnc.deb")
 
-  my_apt.installPkg("xfce4", "xfce4-terminal", "xfce4-goodies", "firefox", "elementary-xfce-icon-theme")
-  my_apt.commit()
+  my_apt.installPkg("xfce4", "xfce4-terminal", "xfce4-goodies", "firefox")
   my_apt.close()
 
   vnc_sec_conf_p = pathlib.Path("/etc/turbovncserver-security.conf")
