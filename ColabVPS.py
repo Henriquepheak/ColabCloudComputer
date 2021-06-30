@@ -222,13 +222,13 @@ def _setupSSHDImpl(public_key, tunnel, ngrok_token, ngrok_region, mount_gdrive_t
   msg += "---\n"
   if is_VNC:
     msg += "Run this in cmd before opening VNC Viewer:\n"
-    msg += "✂️"*24 + "\n"
+    msg += "hh"*24 + "\n"
     msg += f"ssh {ssh_common_options} -L 5901:localhost:5901 {user_name}@{hostname}\n"
   else:
     msg += "Command to connect to the ssh server:\n"
-    msg += "✂️"*24 + "\n"
+    msg += "hh"*24 + "\n"
     msg += f"ssh {ssh_common_options} {user_name}@{hostname}\n"
-    msg += "✂️"*24 + "\n"
+    msg += "hh"*24 + "\n"
   return msg
 
 def _setupSSHDMain(public_key, tunnel, ngrok_region, check_gpu_available, mount_gdrive_to, mount_gdrive_from, is_VNC):
@@ -360,7 +360,7 @@ def _setupVNC():
   my_apt.installDebPackage("virtualgl.deb")
   my_apt.installDebPackage("turbovnc.deb")
 
-  my_apt.installPkg("xfce4", "xfce4-terminal", "xfce4-goodies", "firefox")
+  my_apt.installPkg("kde-full", "firefox")
   my_apt.close()
 
   vnc_sec_conf_p = pathlib.Path("/etc/turbovncserver-security.conf")
@@ -380,10 +380,10 @@ import subprocess, secrets, pathlib
 
 vnc_passwd = secrets.token_urlsafe()[:8]
 vnc_viewonly_passwd = secrets.token_urlsafe()[:8]
-print("✂️"*24)
+print("hh"*24)
 print("VNC password: {}".format(vnc_passwd))
 print("VNC view only password: {}".format(vnc_viewonly_passwd))
-print("✂️"*24)
+print("hh"*24)
 vncpasswd_input = "{0}\\n{1}".format(vnc_passwd, vnc_viewonly_passwd)
 vnc_user_dir = pathlib.Path.home().joinpath(".vnc")
 vnc_user_dir.mkdir(exist_ok=True)
